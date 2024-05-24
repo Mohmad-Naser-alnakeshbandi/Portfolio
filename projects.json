@@ -1,6 +1,12 @@
 {
     "projects": [
       {
+        "name": "Workouts",
+        "description": "The Workouts App is a full-stack application, the app provides a variety of workout plans categorized by different body parts.",
+        "technologies": ["Spring", "React Native", "JS", "API", "JSON"],
+        "url": "https://github.com/Mohmad-Naser-alnakeshbandi/Worksout"
+      },
+      {
         "name": "DataGuardian",
         "description": "This is a web application, aimed at ensuring the integrity and quality of your data.",
         "technologies": ["Python", "Flask", "HTML", "CSS"],
