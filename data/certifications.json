@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Talend Certified Solution Architect",
+    "provider": "Qlik",
+    "image": "images/0.jpg",
+    "date": "09 NOV 2024"
+  },
+  {
+    "title": "Talend Core Certified Developer",
+    "provider": "Qlik",
+    "image": "images/1.jpg",
+    "date": "19 NOV 2024"
+  },
+  {
+    "title": "Qlik Replicate Certification",
+    "provider": "Qlik",
+    "image": "images/2.jpg",
+    "date": "27 DEC 2024"
+  },
+  {
+    "title": "Talend Certified Sales Professional",
+    "provider": "Qlik",
+    "image": "images/3.jpg",
+    "date": "01 DEC 2024"
+  },
+  {
+    "title": "Talend Data Integration Certified Developer",
+    "provider": "Qlik",
+    "image": "images/4.jpg",
+    "date": "16 JAN 2025"
+  },
+  {
+    "title": "Get started building with Power BI",
+    "provider": "Microsoft",
+    "image": "images/5.jpg",
+    "date": "27 APR 2024"
+  },
+  {
+    "title": "Clean, transform, and load data in Power BI",
+    "provider": "Microsoft",
+    "image": "images/6.jpg",
+    "date": "22 APR 2024"
+  },
+  {
+    "title": "Get data in Power BI",
+    "provider": "Microsoft",
+    "image": "images/7.jpg",
+    "date": "27 APR 2024"
+  },
+  {
+    "title": "Qlik Sense Essential Training",
+    "provider": "LinkedIn Learning",
+    "image": "images/8.jpg",
+    "date": "30 JUL 2025"
+  },
+  {
+    "title": "Build AI Agents and Automate Workflows with n8n",
+    "provider": "LinkedIn Learning",
+    "image": "images/9.jpg",
+    "date": "24 JUL 2025"
+  }
+]

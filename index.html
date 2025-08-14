@@ -1,104 +1,234 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <title>Software developer & Data Engineer</title>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Naser Alnakshbandi - Data Engineer & BI Consultant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Mohamad Alnakshbandi</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Über mich</a></li>
+                    <li><a href="#experience">Erfahrung</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projekte</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <body>
-    <header>
-      <a href="#Home">Home <i class="fa fa-user" aria-hidden="true"></i></a>
-      <a href="#technologie"
-        >Technologie <i class="fa fa-code" aria-hidden="true"></i
-      ></a>
-      <a href="#projects"
-        >Projects <i class="fa fa-cogs" aria-hidden="true"></i>
-      </a>
-    </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mohamad Naser Alnakshbandi</h1>
+            <p>Data Engineer & Business Intelligence Consultant</p>
+            <div class="hero-subtitle">
+                Spezialisiert auf ETL-Prozesse, Datenintegration und AI-gestützte Automatisierung mit modernen Tools wie Talend, Qlik Replicate und Cloud-Technologien.
+            </div>
+            <a href="#about" class="cta-button">Mehr erfahren</a>
+        </div>
+    </section>
 
-    <div id="Home">
-      <img src="images/profile-pic.png" alt="" />
-      <h1>Software developer & Data Engineer</h1>
-      <p>
-        Hallo, ich bin Mohamad, ein Softwareentwickler und Data Engineer aus
-        Pforzheim, Deutschland. <br />
-        Ich studiere Informatik an der DHBW Karlsruhe. <br />
-        Mit Leidenschaft für Softwareentwicklung habe ich an zahlreichen
-        Projekten mitgewirkt, von der Idee bis zur Umsetzung.
-      </p>
-      <div class="social">
-        <a href="https://github.com/Mohmad-Naser-alnakeshbandi"
-          ><i class="fa fa-github" aria-hidden="true"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/"
-          ><i class="fa fa-linkedin" aria-hidden="true"></i
-        ></a>
-      </div>
-    </div>
-    <div id="technologie">
-      <h1>Working with beloved technologies and tools</h1>
-      <div class="skill-container">
-        <div class="skill-item">
-          <img src="Skills/java.svg" alt="" />
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Über mich</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-img">
+                      <img src="me.jpg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <a href="mailto:alnakshbandi.mohamad.naser@gmail.com">E-mail: alnakshbandi.mohamad.naser@gmail.com</a>
+                        <a href="tel:015164657673">Handy Nummer: 015164657673</a>
+                        <a>Adresse:  Yorckstraße 13, 75177 Pforzheim</a>
+                    </div>
+                </div>
+                <div class="about-text fade-in">
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                        Als BI-Consultant mit Fokus auf ETL-Prozesse, Datenintegration und AI-gestützte Automatisierung entwickle ich datengesteuerte Lösungen mit Tools wie Talend, Qlik Replicate und der Talend Cloud.
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                        Ergänzend dazu konzipiere ich intelligente Agenten zur Automatisierung von Analyse- und Marketingprozessen – etwa durch den Einsatz von LLMs in interaktiven Anwendungen.
+                    </p>
+                    <p style="font-size: 1.1rem; color: #666;">
+                        Mit meinem Informatik-Hintergrund sowie Erfahrung in Datenanalyse und Softwareentwicklung unterstütze ich Unternehmen dabei, fundierte Entscheidungen effizient umzusetzen.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="skill-item">
-          <img src="Skills/Python.jpg" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/WEB.png" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/Jquery.png" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/MySQL.svg" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/MongoDB.svg" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/React.png" alt="" srcset="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/Flask.png" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/Spring.svg" alt="" srcset="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/Orange.png" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/KNIME.png" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/Talnnd.svg" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/Pentaho.jpg" alt="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/SSIS.png" alt="" srcset="" />
-        </div>
-        <div class="skill-item">
-          <img src="Skills/PowerBI.png" alt="" />
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <div id="projects">
-      <h1>Some of the things I have worked on over the last couple years.</h1>
-      <div id="projects-items">
-    </div>
-    <footer>
-      <p>© 2024 Mohamad Naser Alnakshbandi. All rights reserved.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Berufserfahrung</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">10/2024 – Bis jetzt</div>
+                        <div class="timeline-title">Data Engineer - BI Consultant</div>
+                        <div class="timeline-company">Iodata GmbH - Karlsruhe</div>
+                        <ul>
+                            <li>Konzeption, Implementierung und Optimierung von ETL- und CDC-Prozessen mit Talend Studio und Qlik Replicate</li>
+                            <li>Aufbau und Überwachung von ESB-Prozessen mittels Talend Studio</li>
+                            <li>Entwicklung und Validierung von Data-Quality-Prozessen</li>
+                            <li>Integration benutzerdefinierter Talend-Komponenten für HubSpot-CRM</li>
+                            <li>Konzeption AI-gestützter Lösungen zur Automatisierung von Marketingprozessen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">10/2021 – 10/2024</div>
+                        <div class="timeline-title">Dualer Student – Data Engineer</div>
+                        <div class="timeline-company">DIGITALL Nature Germany GmbH - Karlsruhe</div>
+                        <ul>
+                            <li>Umsetzung und Analyse von ETL-Prozessen mit Talend Open Studio und KNIME</li>
+                            <li>Entwicklung individueller KNIME-Nodes zur Salesforce-Datenverarbeitung</li>
+                            <li>Anwendung fortgeschrittener Text-Mining-Methoden auf E-Commerce-Kundenbewertungen</li>
+                            <li>Optimierung von Marketingstrategien und Kundenzufriedenheit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">09/2021 – 10/2021</div>
+                        <div class="timeline-title">Praktikum</div>
+                        <div class="timeline-company">ec4u expert consulting AG - Karlsruhe</div>
+                        <ul>
+                            <li>Mitarbeit bei API-basierten Salesforce-Integrationen</li>
+                            <li>Teilnahme am Salesforce Trailhead-Programm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Technische Fähigkeiten</h2>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Programmiersprachen</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Webtechnologien & Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">JSP</span>
+                        <span class="skill-tag">Spring</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Business Intelligence</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Orange Data Mining</span>
+                        <span class="skill-tag">KNIME Analytics</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Datenintegration</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Talend Studio</span>
+                        <span class="skill-tag">Talend Cloud</span>
+                        <span class="skill-tag">Qlik Replicate</span>
+                        <span class="skill-tag">KNIME</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>CRM & Plattformen</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Salesforce CRM</span>
+                        <span class="skill-tag">HubSpot</span>
+                        <span class="skill-tag">Google Big Query</span>
+                        <span class="skill-tag">APEX</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Softwareentwicklung</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java Swing</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">API Integration</span>
+                        <span class="skill-tag">ETL Processes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Projekte & Software</h2>
+            <div class="loading" id="projects-loading">
+                <div class="spinner"></div>
+                <p>Projekte werden geladen...</p>
+            </div>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Zertifikate & Schulungen</h2>
+            <div class="loading" id="certifications-loading">
+                <div class="spinner"></div>
+                <p>Zertifikate werden geladen...</p>
+            </div>
+            <div class="cert-grid" id="certifications-container">
+                <!-- Certifications will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+  <!-- Image Modal -->
+  <div id="image-modal" class="image-modal">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" id="image-modal-img">
+  </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
+                <a href="https://mohmad-naser-alnakeshbandi.github.io/Portfolio" target="_blank">Website</a>
+            </div>
+            <p>&copy; 2024 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+        </div>
     </footer>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
