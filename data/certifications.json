@@ -58,5 +58,23 @@
     "provider": "LinkedIn Learning",
     "image": "images/9.jpg",
     "date": "24 JUL 2025"
+  },
+  {
+    "title": "Learning Apache Airflow",
+    "provider": "LinkedIn Learning",
+    "image": "images/10.jpeg",
+    "date": "21 AUG 2025"
+  },
+  {
+    "title": "Power BI Essential Training",
+    "provider": "LinkedIn Learning",
+    "image": "images/11.jpeg",
+    "date": "08 JAN 2025"
+  },
+  {
+    "title": "Learning SQL Programming",
+    "provider": "LinkedIn Learning",
+    "image": "images/12.png",
+    "date": "20 DEC 2021"
   }
 ]
