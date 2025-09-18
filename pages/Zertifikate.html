@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Naser Alnakshbandi - Zertifikate & Schulungen</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/Certifications.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Mohamad Alnakshbandi</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/übermich.html">Über mich</a></li>
+                    <li><a href="../pages/Erfahrung.html">Erfahrung</a></li>
+                    <li><a href="../pages/Skills.html">Skills</a></li>
+                    <li><a href="../pages/Projekt.html">Projekte</a></li>
+                    <li><a href="../pages/Zertifikate.html">Zertifikate</a></li>
+                    <li><a href="../pages/Articles.html">Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Certifications Section -->
+    <section class="section">
+        <div class="container" id="certifications">
+            <h2 class="section-title">Zertifikate & Schulungen</h2>
+            <div class="loading" id="certifications-loading">
+                <div class="spinner"></div>
+                <p>Zertifikate werden geladen...</p>
+            </div>
+            <div class="cert-grid" id="certifications-container">
+                <!-- Certifications will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="image-modal-close">&times;</span>
+        <img class="image-modal-content" id="image-modal-img">
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
+                <a href="https://www.xing.com/profile/MohamadNaser_Alnakshbandi/" target="_blank">Xing</a>
+            </div>
+            <p>&copy; 2025 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Configuration for JSON file paths
+    const base = window.location.pathname.includes('/pages/') ? '..' : '.';
+
+    const CONFIG = {
+      certificationsPath: `${base}/data/certifications.json`
+    };
+
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, observerOptions);
+
+    // Load certifications from JSON
+    async function loadCertifications() {
+        const certificationsContainer = document.getElementById('certifications-container');
+        const certificationsLoading = document.getElementById('certifications-loading');
+
+        try {
+            const response = await fetch(CONFIG.certificationsPath);
+            if (!response.ok) throw new Error('Failed to load certifications');
+
+            const certifications = await response.json();
+            certificationsLoading.style.display = 'none';
+
+            certifications.forEach((cert, index) => {
+                const certCard = document.createElement('div');
+                certCard.className = 'cert-card fade-in';
+                certCard.style.animationDelay = `${index * 0.1}s`;
+
+                // Fix image path for pages folder
+                const imagePath = cert.image.startsWith('../') ? cert.image : '../' + cert.image;
+                const certImage = cert.image ? 
+                    `<img src="${imagePath}" alt="${cert.title}" class="cert-image" onerror="this.style.display='none'">` 
+                    : '';
+
+                certCard.innerHTML = `
+                    ${certImage}
+                    <div class="cert-provider">${cert.provider}</div>
+                    <p class="cert-title">${cert.title}</p>
+                    ${cert.date ? `<small style="color: #999; margin-top: 0.5rem;">${cert.date}</small>` : ''}
+                `;
+
+                certificationsContainer.appendChild(certCard);
+
+                // Modal click
+                const certImageElement = certCard.querySelector('.cert-image');
+                if (certImageElement) {
+                    certImageElement.addEventListener('click', () => {
+                        document.getElementById('image-modal-img').src = imagePath;
+                        document.getElementById('image-modal').style.display = 'block';
+                    });
+                }
+            });
+
+            // Observe new elements
+            document.querySelectorAll('.cert-card').forEach(el => observer.observe(el));
+
+            // Modal close handlers
+            document.querySelector('.image-modal-close').onclick = () => {
+                document.getElementById('image-modal').style.display = 'none';
+            };
+            document.getElementById('image-modal').onclick = (e) => {
+                if (e.target === this) this.style.display = 'none';
+            };
+
+        } catch (error) {
+            console.error('Error loading certifications:', error);
+            certificationsLoading.innerHTML = `
+                <div class="error-message">
+                    <h3>Fehler beim Laden der Zertifikate</h3>
+                    <p>Die Zertifikate konnten nicht geladen werden. Bitte erstellen Sie eine 'certifications.json' Datei.</p>
+                </div>
+            `;
+        }
+    }
+
+    // Load on window load
+    window.addEventListener('load', loadCertifications);
+    </script>
+</body>
+</html>

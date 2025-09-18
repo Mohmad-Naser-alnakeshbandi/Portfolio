@@ -76,5 +76,17 @@
     "provider": "LinkedIn Learning",
     "image": "images/12.png",
     "date": "20 DEC 2021"
+  },
+  {
+    "title": "Databricks Fundamentals",
+    "provider": "Databricks Academy",
+    "image": "images/13.png",
+    "date": "15 SEP 2025"
+  },
+  {
+    "title": "Generative AI Fundamentals",
+    "provider": "Databricks Academy",
+    "image": "images/13.png",
+    "date": "15 SEP 2025"
   }
 ]

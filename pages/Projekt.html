@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Naser Alnakshbandi - Data Engineer & BI Consultant</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/Projects.css">
+</head>
+<body>
+   <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Mohamad Alnakshbandi</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/übermich.html">Über mich</a></li>
+                    <li><a href="../pages/Erfahrung.html">Erfahrung</a></li>
+                    <li><a href="../pages/Skills.html">Skills</a></li>
+                    <li><a href="../pages/Projekt.html">Projekte</a></li>
+                    <li><a href="../pages/Zertifikate.html">Zertifikate</a></li>
+                    <li><a href="../pages/Articles.html">Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Projekte & Software</h2>
+            <div class="loading" id="projects-loading">
+                <div class="spinner"></div>
+                <p>Projekte werden geladen...</p>
+            </div>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
+                <a href="https://www.xing.com/profile/MohamadNaser_Alnakshbandi/" target="_blank">Xing</a>
+            </div>
+            <p>&copy; 2025 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+    // === CONFIG ===
+    const CONFIG = {
+        projectsPath: '../data/projects.json'
+    };
+
+    // === IntersectionObserver for fade-in ===
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    // Observe fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // === Load Projects Function ===
+    async function loadProjects() {
+        const container = document.getElementById('projects-container');
+        const loading = document.getElementById('projects-loading');
+
+        try {
+            const response = await fetch(CONFIG.projectsPath);
+            if (!response.ok) throw new Error('Failed to load projects');
+
+            const projects = await response.json();
+            loading.style.display = 'none';
+
+            projects.forEach((project, index) => {
+                const card = document.createElement('div');
+                card.className = 'project-card fade-in';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                const techHTML = project.technologies ? 
+                    `<div class="project-technologies">
+                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>` : '';
+
+                card.innerHTML = `
+                    <div class="project-header">${project.shortName || project.title.substring(0, 2).toUpperCase()}</div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.description}</p>
+                        ${techHTML}
+                        <a href="${project.link}" target="_blank" class="project-link">${project.linkText || 'Projekt ansehen'} →</a>
+                    </div>
+                `;
+
+                container.appendChild(card);
+
+                // Click to open project link
+                card.addEventListener('click', () => {
+                    window.open(project.link, '_blank');
+                });
+
+                // Observe for fade-in animation
+                observer.observe(card);
+            });
+
+        } catch (err) {
+            console.error('Error loading projects:', err);
+            loading.innerHTML = `
+                <div class="error-message">
+                    <h3>Fehler beim Laden der Projekte</h3>
+                    <p>Die Projekte konnten nicht geladen werden. Bitte erstellen Sie eine 'projects.json' Datei.</p>
+                </div>
+            `;
+        }
+    }
+
+    // === Load projects on page load ===
+    window.addEventListener('load', loadProjects);
+    </script>
+</body>
+</html>

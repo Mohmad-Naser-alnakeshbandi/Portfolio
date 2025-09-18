@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Naser Alnakshbandi - Articles</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/Articles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Mohamad Alnakshbandi</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/übermich.html">Über mich</a></li>
+                    <li><a href="../pages/Erfahrung.html">Erfahrung</a></li>
+                    <li><a href="../pages/Skills.html">Skills</a></li>
+                    <li><a href="../pages/Projekt.html">Projekte</a></li>
+                    <li><a href="../pages/Zertifikate.html">Zertifikate</a></li>
+                    <li><a href="../pages/Articles.html">Articles</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <div class="main-content">
+        <!-- Articles Section -->
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Articles & Blog Posts</h1>
+
+                <!-- Loading Spinner -->
+                <div class="loading" id="articles-loading">
+                    <div class="spinner"></div>
+                    <p>Articles werden geladen...</p>
+                </div>
+
+                <!-- Articles Grid -->
+                <div class="articles-grid" id="articles-container">
+                    <!-- Articles will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
+                <a href="https://www.xing.com/profile/MohamadNaser_Alnakshbandi/" target="_blank">Xing</a>
+            </div>
+            <p>&copy; 2025 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Configuration
+    const base = window.location.pathname.includes('/pages/') ? '..' : '.';
+    const CONFIG = { articlesPath: `${base}/data/articles.json` };
+
+    // Intersection Observer for animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, observerOptions);
+
+    // Load articles from JSON
+    async function loadArticles() {
+        const articlesContainer = document.getElementById('articles-container');
+        const articlesLoading = document.getElementById('articles-loading');
+
+        try {
+            const response = await fetch(CONFIG.articlesPath);
+            if (!response.ok) throw new Error('Failed to load articles');
+
+            const articles = await response.json();
+            articlesLoading.style.display = 'none';
+
+            articles.forEach((article, index) => {
+                const articleCard = document.createElement('div');
+                articleCard.className = 'article-card fade-in';
+                articleCard.style.animationDelay = `${index * 0.1}s`;
+
+                articleCard.innerHTML = `
+                    <h3 class="article-title">${article.title}</h3>
+                    <a href="${article.link}" target="_blank" class="article-link">Read Article →</a>
+                `;
+
+                articlesContainer.appendChild(articleCard);
+                observer.observe(articleCard);
+            });
+
+        } catch (error) {
+            console.error('Error loading articles:', error);
+            articlesLoading.innerHTML = `
+                <div class="error-message">
+                    <h3>Fehler beim Laden der Articles</h3>
+                    <p>Die Articles konnten nicht geladen werden. Bitte erstellen Sie eine 'articles.json' Datei.</p>
+                </div>
+            `;
+        }
+    }
+
+    window.addEventListener('load', loadArticles);
+    </script>
+</body>
+</html>
