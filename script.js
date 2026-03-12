@@ -34,17 +34,18 @@ window.addEventListener('scroll', function () {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
   if (window.scrollY > 100) {
-    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+    navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+    navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.5)';
   } else {
-    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    navbar.style.background = 'rgba(15, 23, 42, 0.85)';
+    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.4)';
   }
 });
 
 // =========================
 // Scroll Animations
 // =========================
+// Only hide elements that are BELOW the viewport — elements already visible stay visible
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -53,46 +54,23 @@ const observerOptions = {
 const observer = new IntersectionObserver(function (entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      entry.target.classList.remove('fade-pending');
       entry.target.classList.add('visible');
     }
   });
 }, observerOptions);
 
 document.querySelectorAll('.fade-in').forEach(el => {
-  observer.observe(el);
-});
-
-// =========================
-// Typing Animation
-// =========================
-const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle) {
-  const originalText = heroSubtitle.textContent;
-  heroSubtitle.textContent = "";
-  let index = 0;
-
-  function typeText() {
-    if (index < originalText.length) {
-      heroSubtitle.textContent = originalText.slice(0, index + 1);
-      index++;
-      setTimeout(typeText, 30);
-    }
+  const rect = el.getBoundingClientRect();
+  if (rect.top >= window.innerHeight) {
+    // Below the fold — hide and animate in on scroll
+    el.classList.add('fade-pending');
+    observer.observe(el);
   }
-
-  typeText();
-}
-
-// =========================
-// Timeline Hover Effects
-// =========================
-document.querySelectorAll('.timeline-content').forEach(item => {
-  item.addEventListener('mouseenter', function () {
-    this.style.transform = 'translateY(-10px) scale(1.02)';
-  });
-  item.addEventListener('mouseleave', function () {
-    this.style.transform = 'translateY(-5px) scale(1)';
-  });
+  // Already in viewport — leave visible (no class changes needed)
 });
+
+// Typing + Counters are handled inline in index.html
 
 // =========================
 // Project Card Click Effect
@@ -120,7 +98,7 @@ function createParticles() {
     particle.style.position = 'absolute';
     particle.style.width = Math.random() * 4 + 2 + 'px';
     particle.style.height = particle.style.width;
-    particle.style.background = 'rgba(255, 255, 255, 0.3)';
+    particle.style.background = 'rgba(56, 189, 248, 0.35)';
     particle.style.borderRadius = '50%';
     particle.style.left = Math.random() * 100 + '%';
     particle.style.top = Math.random() * 100 + '%';
@@ -135,29 +113,55 @@ createParticles();
 // =========================
 // Mobile Menu Toggle
 // =========================
-function setupMobileMenu() {
-  const navbar = document.querySelector('.nav-content');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (!navbar || !navLinks) return;
-
-  // If button doesn’t exist yet, create it
-  if (!document.querySelector('.mobile-menu-btn')) {
-    const menuBtn = document.createElement('button');
-    menuBtn.innerHTML = '☰';
-    menuBtn.className = 'mobile-menu-btn';
-
-    // Toggle class instead of inline styles
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    navbar.appendChild(menuBtn);
-  }
+function toggleMobileMenu(btn) {
+  var navbar = btn.closest(‘.navbar’);
+  navbar.classList.toggle(‘open’);
+  btn.innerHTML = navbar.classList.contains(‘open’) ? ‘&#10005;’ : ‘&#9776;’;
 }
 
-window.addEventListener('load', setupMobileMenu);
-window.addEventListener('resize', setupMobileMenu);
+// =========================
+// Active Nav Link
+// =========================
+function setActiveNavLink() {
+  const path = window.location.pathname;
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    const isHome = (href === '../index.html' || href === './index.html' || href === '#home') &&
+                   (path.endsWith('index.html') || path.endsWith('/Portfolio/') || path.endsWith('/Portfolio'));
+    const isMatch = href && path.endsWith(href.replace('../', '').replace('./', ''));
+    if (isHome || isMatch) {
+      link.classList.add('active');
+    }
+  });
+}
+setActiveNavLink();
+
+// =========================
+// Dynamic Copyright Year
+// =========================
+document.querySelectorAll('.footer p').forEach(el => {
+  el.innerHTML = el.innerHTML.replace(/\d{4}/, new Date().getFullYear());
+});
+
+// =========================
+// Back to Top Button
+// =========================
+function createBackToTop() {
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.innerHTML = '↑';
+  btn.title = 'Nach oben';
+  document.body.appendChild(btn);
+
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+createBackToTop();
 
 // =========================
 // Scroll Progress Indicator
@@ -170,7 +174,7 @@ function createScrollProgress() {
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, #38bdf8, #22d3ee);
     z-index: 9999;
     transition: width 0.25s ease;
   `;

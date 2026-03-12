@@ -6,6 +6,12 @@
     "date": "09 NOV 2024"
   },
   {
+    "title": "Talend Data Integration Certified Developer",
+    "provider": "Qlik",
+    "image": "images/4.jpg",
+    "date": "16 JAN 2025"
+  },
+  {
     "title": "Talend Core Certified Developer",
     "provider": "Qlik",
     "image": "images/1.jpg",
@@ -24,10 +30,46 @@
     "date": "01 DEC 2024"
   },
   {
-    "title": "Talend Data Integration Certified Developer",
-    "provider": "Qlik",
-    "image": "images/4.jpg",
-    "date": "16 JAN 2025"
+    "title": "SnowPro Associate: Platform Certification",
+    "provider": "Snowflake",
+    "image": "images/15.png",
+    "date": "26 FEB 2025"
+  },
+  {
+    "title": "Databricks Fundamentals",
+    "provider": "Databricks Academy",
+    "image": "images/13.png",
+    "date": "15 SEP 2025"
+  },
+  {
+    "title": "Generative AI Fundamentals",
+    "provider": "Databricks Academy",
+    "image": "images/13.png",
+    "date": "15 SEP 2025"
+  },
+  {
+    "title": "Build AI Agents and Automate Workflows with n8n",
+    "provider": "LinkedIn Learning",
+    "image": "images/9.jpg",
+    "date": "24 JUL 2025"
+  },
+  {
+    "title": "Learning Apache Airflow",
+    "provider": "LinkedIn Learning",
+    "image": "images/10.jpeg",
+    "date": "21 AUG 2025"
+  },
+  {
+    "title": "Qlik Sense Essential Training",
+    "provider": "LinkedIn Learning",
+    "image": "images/8.jpg",
+    "date": "30 JUL 2025"
+  },
+  {
+    "title": "Power BI Essential Training",
+    "provider": "LinkedIn Learning",
+    "image": "images/11.jpeg",
+    "date": "08 JAN 2025"
   },
   {
     "title": "Get started building with Power BI",
@@ -48,45 +90,9 @@
     "date": "27 APR 2024"
   },
   {
-    "title": "Qlik Sense Essential Training",
-    "provider": "LinkedIn Learning",
-    "image": "images/8.jpg",
-    "date": "30 JUL 2025"
-  },
-  {
-    "title": "Build AI Agents and Automate Workflows with n8n",
-    "provider": "LinkedIn Learning",
-    "image": "images/9.jpg",
-    "date": "24 JUL 2025"
-  },
-  {
-    "title": "Learning Apache Airflow",
-    "provider": "LinkedIn Learning",
-    "image": "images/10.jpeg",
-    "date": "21 AUG 2025"
-  },
-  {
-    "title": "Power BI Essential Training",
-    "provider": "LinkedIn Learning",
-    "image": "images/11.jpeg",
-    "date": "08 JAN 2025"
-  },
-  {
     "title": "Learning SQL Programming",
     "provider": "LinkedIn Learning",
     "image": "images/12.png",
     "date": "20 DEC 2021"
-  },
-  {
-    "title": "Databricks Fundamentals",
-    "provider": "Databricks Academy",
-    "image": "images/13.png",
-    "date": "15 SEP 2025"
-  },
-  {
-    "title": "Generative AI Fundamentals",
-    "provider": "Databricks Academy",
-    "image": "images/13.png",
-    "date": "15 SEP 2025"
   }
 ]

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamad Naser Alnakshbandi - Zertifikate & Schulungen</title>
+    <title>Zertifikate – Mohamad Naser Alnakshbandi</title>
+    <meta name="description" content="Zertifikate und Schulungen von Mohamad Naser Alnakshbandi in den Bereichen Data Engineering, Cloud und BI.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/Certifications.css">
 </head>
@@ -13,6 +15,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">Mohamad Alnakshbandi</div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu(this)" aria-label="Menu">&#9776;</button>
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/aboutme.html">Über mich</a></li>
@@ -30,6 +33,14 @@
     <section class="section">
         <div class="container" id="certifications">
             <h2 class="section-title">Zertifikate & Schulungen</h2>
+            <div class="cert-filter" id="cert-filter">
+                <button class="cert-filter-btn active" data-filter="all">Alle</button>
+                <button class="cert-filter-btn" data-filter="Qlik">Qlik</button>
+                <button class="cert-filter-btn" data-filter="Snowflake">Snowflake</button>
+                <button class="cert-filter-btn" data-filter="Databricks Academy">Databricks</button>
+                <button class="cert-filter-btn" data-filter="Microsoft">Microsoft</button>
+                <button class="cert-filter-btn" data-filter="LinkedIn Learning">LinkedIn</button>
+            </div>
             <div class="loading" id="certifications-loading">
                 <div class="spinner"></div>
                 <p>Zertifikate werden geladen...</p>
@@ -52,9 +63,8 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
-                <a href="https://www.xing.com/profile/MohamadNaser_Alnakshbandi/" target="_blank">Xing</a>
             </div>
-            <p>&copy; 2025 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
@@ -89,6 +99,7 @@
             certifications.forEach((cert, index) => {
                 const certCard = document.createElement('div');
                 certCard.className = 'cert-card fade-in';
+                certCard.dataset.provider = cert.provider;
                 certCard.style.animationDelay = `${index * 0.1}s`;
 
                 // Fix image path for pages folder
@@ -111,7 +122,7 @@
                 if (certImageElement) {
                     certImageElement.addEventListener('click', () => {
                         document.getElementById('image-modal-img').src = imagePath;
-                        document.getElementById('image-modal').style.display = 'block';
+                        document.getElementById('image-modal').style.display = 'flex';
                     });
                 }
             });
@@ -138,8 +149,27 @@
         }
     }
 
+    // Filter logic
+    document.getElementById('cert-filter').addEventListener('click', function(e) {
+        var btn = e.target.closest('.cert-filter-btn');
+        if (!btn) return;
+        document.querySelectorAll('.cert-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        var filter = btn.dataset.filter;
+        document.querySelectorAll('.cert-card').forEach(card => {
+            card.style.display = (filter === 'all' || card.dataset.provider === filter) ? '' : 'none';
+        });
+    });
+
     // Load on window load
     window.addEventListener('load', loadCertifications);
+
+    // === Mobile Menu ===
+    function toggleMobileMenu(btn) {
+        var navbar = btn.closest('.navbar');
+        navbar.classList.toggle('open');
+        btn.innerHTML = navbar.classList.contains('open') ? '&#10005;' : '&#9776;';
+    }
     </script>
 </body>
 </html>

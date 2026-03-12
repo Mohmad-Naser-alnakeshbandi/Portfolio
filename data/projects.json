@@ -2,7 +2,7 @@
   {
     "title": "Workouts App",
     "shortName": "WO",
-    "description": "A full-stack app offering workout plans categorized by body parts.",
+    "description": "Full-Stack-App mit Trainingsplänen, kategorisiert nach Körperpartien.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/Worksout",
     "linkText": "GitHub",
     "technologies": ["Spring", "React Native", "JavaScript", "API", "JSON"]
@@ -10,7 +10,7 @@
   {
     "title": "DataGuardian",
     "shortName": "DG",
-    "description": "Web app ensuring data integrity and quality.",
+    "description": "Web-App zur Sicherstellung von Datenintegrität und Datenqualität.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/DataGuardian",
     "linkText": "GitHub",
     "technologies": ["Python", "Flask", "HTML", "CSS"]
@@ -18,7 +18,7 @@
   {
     "title": "EasySee",
     "shortName": "ES",
-    "description": "Simple tool to view and filter CSV files with SQL-like queries.",
+    "description": "Einfaches Tool zum Anzeigen und Filtern von CSV-Dateien mit SQL-ähnlichen Abfragen.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/EasySee",
     "linkText": "GitHub",
     "technologies": ["HTML", "CSS", "JavaScript"]
@@ -26,7 +26,7 @@
   {
     "title": "Web-Editor",
     "shortName": "WE",
-    "description": "Online code editor with live preview for HTML, CSS, and JavaScript.",
+    "description": "Online-Code-Editor mit Live-Vorschau für HTML, CSS und JavaScript.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/WebEditor",
     "linkText": "GitHub",
     "technologies": ["HTML", "CSS", "JavaScript"]
@@ -34,7 +34,7 @@
   {
     "title": "Inventory Management System",
     "shortName": "IMS",
-    "description": "System to manage and track car dealership inventory.",
+    "description": "System zur Verwaltung und Verfolgung des Fahrzeugbestands eines Autohauses.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/InventoryManagementSystem",
     "linkText": "GitHub",
     "technologies": ["Java", "Spring", "Thymeleaf", "MySQL"]
@@ -42,7 +42,7 @@
   {
     "title": "Easy-jQuery VS Code Plugin",
     "shortName": "EQ",
-    "description": "VS Code extension for generating jQuery templates with autocomplete.",
+    "description": "VS Code-Erweiterung zur Generierung von jQuery-Vorlagen mit Autovervollständigung.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/easy-jquery",
     "linkText": "GitHub",
     "technologies": ["JavaScript", "VS Code API", "jQuery", "Node.js"]
@@ -50,7 +50,7 @@
   {
     "title": "PyScriptMaker",
     "shortName": "PSM",
-    "description": "VS Code extension for generating PyScript-based browser apps.",
+    "description": "VS Code-Erweiterung zur Erstellung von PyScript-basierten Browser-Apps.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/pyscriptMaker",
     "linkText": "GitHub",
     "technologies": ["JavaScript", "Node.js", "PyScript"]
@@ -58,7 +58,7 @@
   {
     "title": "Complaint Management App",
     "shortName": "CMA",
-    "description": "Java app using Domain Driven Design to manage complaints.",
+    "description": "Java-App auf Basis von Domain Driven Design zur Verwaltung von Beschwerden.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/ASE2",
     "linkText": "GitHub",
     "technologies": ["Java", "Swing", "DDD"]
@@ -66,7 +66,7 @@
   {
     "title": "Quote App",
     "shortName": "QA",
-    "description": "Mobile app using Domain Driven Design for managing quotes.",
+    "description": "Mobile App auf Basis von Domain Driven Design zur Verwaltung von Zitaten.",
     "link": "https://github.com/Mohmad-Naser-alnakeshbandi/DDD-QuoteApp",
     "linkText": "GitHub",
     "technologies": ["Dart", "DDD", "SQL", "API"]

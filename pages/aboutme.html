@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamad Naser Alnakshbandi - Data Engineer & BI Consultant</title>
+    <title>Über mich – Mohamad Naser Alnakshbandi</title>
+    <meta name="description" content="Erfahren Sie mehr über Mohamad Naser Alnakshbandi – BI-Consultant mit Fokus auf ETL, Datenintegration und AI-gestützte Automatisierung.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/about.css">
+<script>
+function toggleMobileMenu(btn) {
+  var navbar = btn.closest('.navbar');
+  navbar.classList.toggle('open');
+  btn.innerHTML = navbar.classList.contains('open') ? '&#10005;' : '&#9776;';
+}
+</script>
 </head>
 <body>
       <!-- Navigation -->
@@ -13,6 +22,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">Mohamad Alnakshbandi</div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu(this)" aria-label="Menu">&#9776;</button>
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/aboutme.html">Über mich</a></li>
@@ -37,22 +47,21 @@
                 </div>
                 <div class="contact-info">
                     <a href="mailto:alnakshbandi.mohamad.naser@gmail.com">E-mail: alnakshbandi.mohamad.naser@gmail.com</a>
-                    <a href="tel:015164657673">Handy Nummer: 015164657673</a>
                     <a>Adresse: Yorckstraße 13, 75177 Pforzheim</a>
                 </div>
             </div>
             <div class="about-text fade-in">
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                    Als BI-Consultant mit Fokus auf ETL-Prozesse, Datenintegration und AI-gestützte Automatisierung entwickle ich datengesteuerte Lösungen mit Tools wie Talend, Qlik Replicate und der Talend Cloud.
+                <p class="about-paragraph">
+                    Als Data Engineer & BI/AI-Consultant bei <strong>LeitArt Gesellschaft für Mittelstandskybernetik mbH</strong> gestalte ich die datengetriebene Transformation mittelständischer Unternehmen – von der Datenpipeline bis zum intelligenten AI Agent. Mein Fokus liegt auf praxisnahen Lösungen, die echten Mehrwert schaffen.
                 </p>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                    Zusätzlich verfüge ich über fundierte Kenntnisse in <strong>Python</strong> als Programmiersprache für Datenverarbeitung und Automatisierung, sowie praktische Erfahrung mit <strong>Databricks</strong> für skalierbare Datenverarbeitung und Machine Learning.
+                <p class="about-paragraph">
+                    Ich entwickle skalierbare <strong>Data Pipelines</strong>, baue <strong>Open Lakehouse Architekturen</strong> auf Basis von Apache Iceberg und Snowflake auf und erweitere Talend-Workflows mit KI-gestützten Komponenten – darunter die <strong>Toon Extension für AI</strong>. ETL/CDC-Prozesse mit Talend Studio und Qlik Replicate gehören dabei zu meinem Alltag.
                 </p>
-                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
-                    Ergänzend dazu konzipiere ich intelligente Agenten zur Automatisierung von Analyse- und Marketingprozessen – etwa durch den Einsatz von LLMs in interaktiven Anwendungen.
+                <p class="about-paragraph">
+                    Ein besonderer Schwerpunkt liegt auf der Entwicklung von <strong>AI Agents für BI-Lösungen</strong>: Ich konzipiere und implementiere intelligente Automatisierungssysteme, die auf LLMs basieren und komplexe Analyse- sowie Entscheidungsprozesse eigenständig ausführen.
                 </p>
-                <p style="font-size: 1.1rem; color: #666;">
-                    Mit meinem Informatik-Hintergrund sowie Erfahrung in Datenanalyse und Softwareentwicklung unterstütze ich Unternehmen dabei, fundierte Entscheidungen effizient umzusetzen.
+                <p class="about-paragraph">
+                    Mit fundierten Kenntnissen in <strong>Python</strong>, praktischer Erfahrung mit <strong>Databricks</strong> und einem Informatik-Hintergrund verbinde ich technische Tiefe mit strategischem Denken – und helfe Unternehmen, ihre Daten in echte Wettbewerbsvorteile zu verwandeln.
                 </p>
             </div>
         </div>
@@ -67,9 +76,8 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
-                <a href="https://www.xing.com/profile/MohamadNaser_Alnakshbandi/" target="_blank">Xing</a>
             </div>
-            <p>&copy; 2025 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
     <script src="../script.js"></script>

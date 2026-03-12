@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamad Naser Alnakshbandi - Articles</title>
+    <title>Articles – Mohamad Naser Alnakshbandi</title>
+    <meta name="description" content="Artikel und Blog-Posts von Mohamad Naser Alnakshbandi zu Data Engineering, ETL, BI und AI-Automatisierung.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../styles/Articles.css">
 </head>
@@ -13,6 +15,7 @@
         <div class="container">
             <div class="nav-content">
                 <div class="logo">Mohamad Alnakshbandi</div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu(this)" aria-label="Menu">&#9776;</button>
                 <ul class="nav-links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../pages/aboutme.html">Über mich</a></li>
@@ -53,9 +56,8 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/mohamad-naser-alnakeshbandi/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/Mohmad-Naser-alnakeshbandi" target="_blank">GitHub</a>
-                <a href="https://www.xing.com/profile/MohamadNaser_Alnakshbandi/" target="_blank">Xing</a>
             </div>
-            <p>&copy; 2025 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Mohamad Naser Alnakshbandi. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
@@ -110,6 +112,13 @@
     }
 
     window.addEventListener('load', loadArticles);
+
+    // === Mobile Menu ===
+    function toggleMobileMenu(btn) {
+        var navbar = btn.closest('.navbar');
+        navbar.classList.toggle('open');
+        btn.innerHTML = navbar.classList.contains('open') ? '&#10005;' : '&#9776;';
+    }
     </script>
 </body>
 </html>
